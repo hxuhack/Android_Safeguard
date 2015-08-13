@@ -19,7 +19,6 @@
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
   libdeclare.h \
-  /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/android/log.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/pthread.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/time.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/time.h \
@@ -89,8 +88,6 @@ sec.h:
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h:
 
 libdeclare.h:
-
-/opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/android/log.h:
 
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/pthread.h:
 

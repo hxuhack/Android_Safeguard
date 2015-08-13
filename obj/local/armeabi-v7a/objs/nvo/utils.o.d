@@ -1,4 +1,4 @@
-./obj/local/armeabi-v7a/objs/nvo/sha1.o: sha1.c sha1.h \
+./obj/local/armeabi-v7a/objs/nvo/utils.o: utils.c utils.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/stdio.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -17,10 +17,9 @@
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/linux/compiler.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm/posix_types.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
-  /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
-  utils.h
+  /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h
 
-sha1.h:
+utils.h:
 
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/stdio.h:
 
@@ -59,5 +58,3 @@ sha1.h:
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h:
 
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h:
-
-utils.h:
