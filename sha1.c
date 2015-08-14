@@ -164,10 +164,8 @@ void nv_sw(){
 // the 'NVO' part
 void NVO_MODULE(){
     //TO BE REWRITEN
-uint8_t fgenes_raw[20] = {225,63,110,105,144,15,153,188,156,150,247,129,136,177,205,28,216,66,55,49};
-;
-uint8_t kgenes_raw[20] = {177,115,140,249,69,170,34,104,111,221,107,80,28,217,185,172,232,82,105,133};
-;
+uint8_t fgenes_raw[20] = {18,30,155,126,247,213,130,196,48,103,18,151,187,145,109,28,121,93,38,87};;
+uint8_t kgenes_raw[20] = {132,215,38,176,86,66,54,124,139,83,230,158,113,129,28,105,86,159,45,134};;
 genes80_t fgenes = BitstoGenes(fgenes_raw);
 genes80_t kgenes = BitstoGenes(kgenes_raw);
 
@@ -312,7 +310,8 @@ int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize])
 void PrintRest(uint8_t data[], int size){
     int i;
     printf("\t");
-    for (i=0; i<size; i++)
+    for (i=0; i<size; i++){
         printf("%02x", data[i]);
+    }
     printf("\n");
 }

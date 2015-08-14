@@ -310,7 +310,8 @@ int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize])
 void PrintRest(uint8_t data[], int size){
     int i;
     printf("\t");
-    for (i=0; i<size; i++)
+    for (i=0; i<size; i++){
         printf("%02x", data[i]);
+    }
     printf("\n");
 }
