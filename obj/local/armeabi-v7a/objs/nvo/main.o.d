@@ -1,4 +1,4 @@
-./obj/local/armeabi-v7a/objs/nvo/main.o: main.c sha1.h \
+./obj/local/armeabi-v7a/objs/nvo/main.o: main.c sec.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/stdio.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -18,7 +18,7 @@
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm/posix_types.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm-generic/posix_types.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h \
-  sec.h \
+  sha1.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/socket.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/linux/socket.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/asm/fcntl.h \
@@ -75,7 +75,7 @@
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/android/log.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/assert.h
 
-sha1.h:
+sec.h:
 
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/stdio.h:
 
@@ -115,7 +115,7 @@ sha1.h:
 
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysmacros.h:
 
-sec.h:
+sha1.h:
 
 /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/socket.h:
 

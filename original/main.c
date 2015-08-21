@@ -1,5 +1,5 @@
-#include "sec.h"
 #include "sha1.h"
+#include "sec.h"
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
@@ -7,8 +7,8 @@
 #include <netdb.h>
 #include <unistd.h>
 #include <jni.h>
-#include <android/log.h>
-#include <assert.h>
+#include<android/log.h>
+#include<assert.h>
 
 #define JNIREG_CLASS "com/nvo/lib"
 

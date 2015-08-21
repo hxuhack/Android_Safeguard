@@ -8,5 +8,6 @@ typedef int bool;
 #define false 0  
 #define true  1  
 #define MSG_SIZE 8
+int check_proc(char** );
 
 #endif
