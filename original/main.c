@@ -1,16 +1,14 @@
-#include "sha1.h"
 #include "sec.h"
+#include "sha1.h"
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <unistd.h>
-#include <jni.h>
-#include<android/log.h>
-#include<assert.h>
-
-#define JNIREG_CLASS "com/nvo/lib"
+#include "android/jni.h"
+#include "android/android/log.h"
+#include <assert.h>
 
 static int socketid;
 
@@ -87,37 +85,4 @@ JNIEXPORT jint JNICALL native_secrequest(
     send(socketid, msg_to_server, msgsize , 0);
 
     return 0;
-}
-
-static JNINativeMethod jMethods[]={
-	{"socketconnect","(Ljava/lang/String;I)I",(void*) native_socketconnect},
-	{"secrequest","(Ljava/lang/String;)I",(void*) native_secrequest}
-};
-
-static int registerNativeMethods(JNIEnv* env, const char* className, JNINativeMethod* jMethods, int numMethods){
-	jclass clazz;
-	clazz = (*env)->FindClass(env,className);
-	if(clazz==NULL)
-		return JNI_FALSE;
-	if((*env)->RegisterNatives(env,clazz,jMethods,numMethods)<0)
-		return JNI_FALSE;
-	return JNI_TRUE;
-}
-
-static int registerNatives(JNIEnv* env){
-	if(!registerNativeMethods(env,JNIREG_CLASS,jMethods,sizeof(jMethods)/sizeof(jMethods[0])))
-		return JNI_FALSE;
-	return	JNI_TRUE;
-}
-
-JNIEXPORT jint JNICALL JNI_OnLoad(JavaVM* vm, void* reserved){
-	JNIEnv* env = NULL;
-	jint result = -1;
-	if((*vm)->GetEnv(vm, (void**) &env, JNI_VERSION_1_4)!= JNI_OK)
-		return -1;
-	assert(env != NULL);
-	if(!registerNatives(env))
-		return -1;
-	result = JNI_VERSION_1_4;
-	return result;
 }
