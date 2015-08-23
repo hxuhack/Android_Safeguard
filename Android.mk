@@ -7,5 +7,5 @@ LOCAL_LDLIBS	:= -L$(SYSROOT)/usr/lib -llog
 #LOCAL_C_INCLUDES+="/opt/lollipop/system/core/include/cutils/"
 LOCAL_CFLAGS	:= -DDEBUG -O0
 LOCAL_CFLAGS += -DHAVE_SYS_UIO_H
-LOCAL_SRC_FILES := utils.c sec.c sha1.c main.c 
+LOCAL_SRC_FILES := utils.c sec.c sha1.c nvobridge.c main.c 
 include $(BUILD_SHARED_LIBRARY)

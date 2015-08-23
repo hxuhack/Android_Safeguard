@@ -1,4 +1,5 @@
-./obj/local/armeabi-v7a/objs/nvo/main.o: main.c sec.h \
+./obj/local/armeabi-v7a/objs/nvo/nvobridge.o: nvobridge.c nvobridge.h \
+  sec.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/stdio.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/cdefs.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/cdefs_elf.h \
@@ -72,6 +73,8 @@
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/sys/sysconf.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/pathconf.h \
   /opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/assert.h
+
+nvobridge.h:
 
 sec.h:
 

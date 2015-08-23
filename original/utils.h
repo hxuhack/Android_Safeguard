@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+#ifndef __uint8_t_defined
+typedef unsigned char uint8_t;
+#define __uint8_t_defined
+#endif
+
 typedef struct genes4_st{
     uint8_t genes[4];
 };

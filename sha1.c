@@ -18,10 +18,10 @@
                 (((word) << (bits)) | ((word) >> (32-(bits))))
 
 /* Local Function Prototyptes */
-void SHA1PadMessage(SHA1Context *);
-void SHA1ProcessMessageBlock(SHA1Context *);
+void LIZIBJFYOOEDTIWURYLSNMSGVKRYGUM(SHA1Context *);
+void TCLDFUIELWIOSSNOKNZCANWGIIYHRUT(SHA1Context *);
 
-int SHA1Reset(SHA1Context *context)
+int RXCTXGZIAWAGCQWPGPFTCLFGKUHJJKR(SHA1Context *context)
 {
     if (!context)
     {
@@ -44,7 +44,7 @@ int SHA1Reset(SHA1Context *context)
     return shaSuccess;
 }
 
-int SHA1Result( SHA1Context *context,
+int XQPVXTROYMFLKPWWEZRPFYFSQROSMWN( SHA1Context *context,
                 uint8_t Message_Digest[SHA1HashSize])
 {
     int i;
@@ -61,7 +61,7 @@ int SHA1Result( SHA1Context *context,
 
     if (!context->Computed)
     {
-        SHA1PadMessage(context);
+        LIZIBJFYOOEDTIWURYLSNMSGVKRYGUM(context);
         for(i=0; i<64; ++i)
         {
             /* message may be sensitive, clear it out */
@@ -81,7 +81,7 @@ int SHA1Result( SHA1Context *context,
     return shaSuccess;
 }
 
-int SHA1Input(    SHA1Context    *context,
+int AIUVHCWPFURNWHLMPATIEGQMQKWBVGT(    SHA1Context    *context,
                   const uint8_t  *message_array,
                   unsigned       length)
 {
@@ -123,7 +123,7 @@ int SHA1Input(    SHA1Context    *context,
 
     if (context->Message_Block_Index == 64)
     {
-        SHA1ProcessMessageBlock(context);
+        TCLDFUIELWIOSSNOKNZCANWGIIYHRUT(context);
     }
 
     message_array++;
@@ -139,20 +139,20 @@ uint32_t      A, B, C, D, E, F, K;     /* Word buffers                */
 
 
 //
-void nv_lo0(){ 
-	F = B ^ C ^ D;
-}
-void nv_lo1(){
-	F = B ^ C ^ D;
-}
-void nv_lo2(){
-	F = (B & C) | ((~B) & D);
-}
-void nv_lo3(){
+void KYEQGBYKOXUCRNRFXFEBFRZOAIOJZIC(){
 	F = (B & C) | (B & D) | (C & D);
 }
+void LIIBOLCYZZVESIVXHCDIIWJYWRMHSWJ(){
+	F = B ^ C ^ D;
+}
+void EESHVFJVHKQLCYIZFLCPVZZTXSHFNDQ(){
+	F = (B & C) | ((~B) & D);
+}
+void RJKYEQKAXUQKXRUYYFDQCEPVDJEIWHB(){ 
+	F = B ^ C ^ D;
+}
 
-void nv_sw(){
+void PTLQXDAXCUQOTHJUFOXXRBMOEYTPWCQ(){
 	    temp =  SHA1CircularShift(5,A) + F + E + W[t] + K; 
 	    E = D;
         D = C;
@@ -162,28 +162,28 @@ void nv_sw(){
 }
 
 // the 'NVO' part
-void NVO_MODULE(){
+void MVDCTJESLAKAWTJQBZNYQQNHWLALHED(){
     //TO BE REWRITEN
-uint8_t fgenes_raw[20] = {87,252,25,192,253,229,63,25,35,205,206,178,19,199,81,49,210,117,173,65};;
-uint8_t kgenes_raw[20] = {130,69,122,226,83,248,187,70,3,122,144,90,118,169,26,115,142,89,141,177};;
-genes80_t fgenes = BitstoGenes(fgenes_raw);
-genes80_t kgenes = BitstoGenes(kgenes_raw);
+uint8_t fgenes_raw[20] = {120,216,219,74,129,122,14,239,213,108,186,32,178,248,121,17,189,182,113,101};;
+uint8_t kgenes_raw[20] = {202,49,4,142,122,68,114,11,108,159,9,228,119,228,46,248,94,60,231,51};;
+genes80_t fgenes = OEMXSJVVDHENFDTAHAPAMBARGRLDUCN(fgenes_raw);
+genes80_t kgenes = OEMXSJVVDHENFDTAHAPAMBARGRLDUCN(kgenes_raw);
 
     int t = 0;
     int tmpTime = time();
     while (t < 80) {
        switch (fgenes.genes[t]){
            case 0:
-               nv_lo0();
+               KYEQGBYKOXUCRNRFXFEBFRZOAIOJZIC();
                break;
            case 1:
-               nv_lo1();
+               LIIBOLCYZZVESIVXHCDIIWJYWRMHSWJ();
                break;
            case 2:
-               nv_lo2();
+               EESHVFJVHKQLCYIZFLCPVZZTXSHFNDQ();
                break;
            case 3:
-               nv_lo3();
+               RJKYEQKAXUQKXRUYYFDQCEPVDJEIWHB();
                break;
            default:
                break;
@@ -204,13 +204,13 @@ genes80_t kgenes = BitstoGenes(kgenes_raw);
            default:
                break;
        }
-       nv_sw();
+       PTLQXDAXCUQOTHJUFOXXRBMOEYTPWCQ();
        t++;
     }
 }
 
 
-void SHA1ProcessMessageBlock(SHA1Context *context)
+void TCLDFUIELWIOSSNOKNZCANWGIIYHRUT(SHA1Context *context)
 {
 
     for(t = 0; t < 16; t++)
@@ -232,7 +232,7 @@ void SHA1ProcessMessageBlock(SHA1Context *context)
     D = context->Intermediate_Hash[3];
     E = context->Intermediate_Hash[4];
 	
-    NVO_MODULE();
+    MVDCTJESLAKAWTJQBZNYQQNHWLALHED();
 
     context->Intermediate_Hash[0] += A;
     context->Intermediate_Hash[1] += B;
@@ -244,7 +244,7 @@ void SHA1ProcessMessageBlock(SHA1Context *context)
 }
 
 
-void SHA1PadMessage(SHA1Context *context)
+void LIZIBJFYOOEDTIWURYLSNMSGVKRYGUM(SHA1Context *context)
 {
     if (context->Message_Block_Index > 55)
     {
@@ -254,7 +254,7 @@ void SHA1PadMessage(SHA1Context *context)
             context->Message_Block[context->Message_Block_Index++] = 0;
         }
 
-        SHA1ProcessMessageBlock(context);
+        TCLDFUIELWIOSSNOKNZCANWGIIYHRUT(context);
 
         while(context->Message_Block_Index < 56)
         {
@@ -279,21 +279,21 @@ void SHA1PadMessage(SHA1Context *context)
     context->Message_Block[62] = context->Length_Low >> 8;
     context->Message_Block[63] = context->Length_Low;
 
-    SHA1ProcessMessageBlock(context);
+    TCLDFUIELWIOSSNOKNZCANWGIIYHRUT(context);
 }
 
 
-int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize])
+int LNCGMVYBUMIHWXGVCFMTKMYEDPSVDPI(char* testcase, uint8_t Message_Digest[SHA1HashSize])
 {
     SHA1Context sha;
     int i, err;
-    err = SHA1Reset(&sha);
-    err = SHA1Input(&sha, (const unsigned char *) testcase, strlen(testcase));
+    err = RXCTXGZIAWAGCQWPGPFTCLFGKUHJJKR(&sha);
+    err = AIUVHCWPFURNWHLMPATIEGQMQKWBVGT(&sha, (const unsigned char *) testcase, strlen(testcase));
     if (err)
     {
         fprintf(stderr, "SHA1Input Error %d.\n", err );
     }
-    err = SHA1Result(&sha, Message_Digest);
+    err = XQPVXTROYMFLKPWWEZRPFYFSQROSMWN(&sha, Message_Digest);
 
     if (err)
     {
@@ -307,7 +307,7 @@ int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize])
     }     
 }
 
-void PrintRest(uint8_t data[], int size){
+void VAJZVSFPFGAFCVQUWQHVIZIRVVTJEYM(uint8_t data[], int size){
     int i;
     printf("\t");
     for (i=0; i<size; i++){

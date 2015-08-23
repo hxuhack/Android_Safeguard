@@ -4,7 +4,7 @@
 #include<pthread.h>
 
 
-int get_libinfo(char* line, char* libname)
+int LXFCKZZKMUNQUAEAJPQUTSLCOKSJHZT(char* line, char* libname)
 {
 	
 	 //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
@@ -36,7 +36,7 @@ int get_libinfo(char* line, char* libname)
     
 }
 
-bool chkdict(char* libname){
+bool SYZWIYVUKSJDOKJOVYFRTZEWPOQYVPS(char* libname){
     int i;
     for(i = 0; i < dictlength; i++){
 
@@ -47,42 +47,42 @@ bool chkdict(char* libname){
     return false;
 }
 
-bool chkdeleted(char* libname){
+bool POTOYTLVFDEITQSINSNEMOIKEYACVSW(char* libname){
 	//should be (deleted), the word maybe breaked into two lines;
     if(strstr(libname, "(d"))
     	return true;
     return false;
 }
 
-bool chkstack(char* libname){
+bool LIRZIKMDQQIAJAUTONIUBXDNBBNFXHE(char* libname){
     if(strstr(libname, "[stack:"))
     	return true;
     return false;
 }
 
-bool chkdev(char* libname){
+bool KPXLYKXDAPLCBOXUCKDWNABADFPKCXQ(char* libname){
     if(strstr(libname, "/dev/"))
     	return true;
     return false;
 }
-bool chksystem(char* libname){
+bool OMOZMYYQAODCPRBLVNOUAQXAVCSGGPY(char* libname){
     if(strstr(libname, "/system/"))
     	return true;
     return false;
 }
 
-bool chkdvmcache(char* libname){
+bool UDMVQMUIOKLTBFUMCIBWKTUNPYFXFUV(char* libname){
     if(strstr(libname, "/data/dalvik-cache/"))
     	return true;
     return false;
 }
-bool chkself(char* libname){
+bool ZXKXPYRXNDLGEQAQSKTRXPNKGLPDQLA(char* libname){
     if(strstr(libname, "libnvo.so"))
     	return true;
     return false;
 }
 
-int read_map(pid_t pid, char message[MSG_SIZE][128])
+int SKMPALIZALKGPCIHXVDOSSBEYOVDFGF(pid_t pid, char message[MSG_SIZE][128])
 {
     FILE *fp;
     char filename[32];
@@ -98,17 +98,17 @@ int read_map(pid_t pid, char message[MSG_SIZE][128])
 
         while(fgets(line, 127, fp) != NULL){
    	    //__android_log_print(ANDROID_LOG_INFO, "NVO", "line: %s", line);
-            if(get_libinfo(line, libname) == -1)
+            if(LXFCKZZKMUNQUAEAJPQUTSLCOKSJHZT(line, libname) == -1)
 		continue;
-            if(chkdeleted(libname) 
-		|| chkself(libname)
-		|| chkstack(libname) 
-		|| chkdev(libname) 
-		|| chksystem(libname) 
-		|| chkdvmcache(libname) == true)
+            if(POTOYTLVFDEITQSINSNEMOIKEYACVSW(libname) 
+		|| ZXKXPYRXNDLGEQAQSKTRXPNKGLPDQLA(libname)
+		|| LIRZIKMDQQIAJAUTONIUBXDNBBNFXHE(libname) 
+		|| KPXLYKXDAPLCBOXUCKDWNABADFPKCXQ(libname) 
+		|| OMOZMYYQAODCPRBLVNOUAQXAVCSGGPY(libname) 
+		|| UDMVQMUIOKLTBFUMCIBWKTUNPYFXFUV(libname) == true)
 		continue;
 
-	    if(chkdict(libname) == false){
+	    if(SYZWIYVUKSJDOKJOVYFRTZEWPOQYVPS(libname) == false){
 		 //snprintf packs the string with '\0', hence the size should be strlen + 1
 		//__android_log_print(ANDROID_LOG_INFO, "NVO", "libname: %s", libname);
            	 if(counter > MSG_SIZE - 1)
@@ -126,9 +126,9 @@ int read_map(pid_t pid, char message[MSG_SIZE][128])
 }
 
 
-int check_proc(char** out)
+int ORVQKRVANVDEZNMEGKOJCCRHVXOTVGI(char** out)
 {
     pid_t pid = getpid();
-    int size = read_map(pid, out);
+    int size = SKMPALIZALKGPCIHXVDOSSBEYOVDFGF(pid, out);
     return size;
 }

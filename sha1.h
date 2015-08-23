@@ -52,13 +52,13 @@ typedef struct SHA1Context
  *  Function Prototypes
  */
 
-int SHA1Reset(SHA1Context *);
-int SHA1Input(SHA1Context *,
+int RXCTXGZIAWAGCQWPGPFTCLFGKUHJJKR(SHA1Context *);
+int AIUVHCWPFURNWHLMPATIEGQMQKWBVGT(SHA1Context *,
                 const uint8_t *,
                 unsigned int);
-int SHA1Result(SHA1Context *,
+int XQPVXTROYMFLKPWWEZRPFYFSQROSMWN(SHA1Context *,
                 uint8_t Message_Digest[SHA1HashSize]);
 
-int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize]);
+int LNCGMVYBUMIHWXGVCFMTKMYEDPSVDPI(char* testcase, uint8_t Message_Digest[SHA1HashSize]);
 
 #endif

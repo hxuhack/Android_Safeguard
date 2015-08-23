@@ -4,4 +4,6 @@ cp original/sha1.c sha1.c
 cp original/sha1.h sha1.h
 cp original/utils.c utils.c
 cp original/utils.h utils.h
+cp original/nvobridge.c nvobridge.c
+cp original/nvobridge.h nvobridge.h
 cp original/main.c main.c
