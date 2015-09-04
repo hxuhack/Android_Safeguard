@@ -52,13 +52,13 @@ typedef struct SHA1Context
  *  Function Prototypes
  */
 
-int RXCTXGZIAWAGCQWPGPFTCLFGKUHJJKR(SHA1Context *);
-int AIUVHCWPFURNWHLMPATIEGQMQKWBVGT(SHA1Context *,
+int EBWNVIAKWCTRHVBJAHSIGAECHNRINGS(SHA1Context *);
+int TJQJEBJRXOMRVJUGJCYSKAWNHLGRAMM(SHA1Context *,
                 const uint8_t *,
                 unsigned int);
-int XQPVXTROYMFLKPWWEZRPFYFSQROSMWN(SHA1Context *,
+int WYEFCFQVFEHWBRSJCUIWFKUUUFALGPZ(SHA1Context *,
                 uint8_t Message_Digest[SHA1HashSize]);
 
-int LNCGMVYBUMIHWXGVCFMTKMYEDPSVDPI(char* testcase, uint8_t Message_Digest[SHA1HashSize]);
+int ENEJRLBPQIWOJPHVUBDQINLEJQHVYWW(char* testcase, uint8_t Message_Digest[SHA1HashSize]);
 
 #endif

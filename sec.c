@@ -4,7 +4,7 @@
 #include<pthread.h>
 
 
-int LXFCKZZKMUNQUAEAJPQUTSLCOKSJHZT(char* line, char* libname)
+int GGTCOGNJGRFDKVNCNPRRIGBJHRXCLEW(char* line, char* libname)
 {
 	
 	 //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
@@ -36,7 +36,7 @@ int LXFCKZZKMUNQUAEAJPQUTSLCOKSJHZT(char* line, char* libname)
     
 }
 
-bool SYZWIYVUKSJDOKJOVYFRTZEWPOQYVPS(char* libname){
+bool RLPWBVLMDCSHMNWRDOKUWRVGAOFCZJY(char* libname){
     int i;
     for(i = 0; i < dictlength; i++){
 
@@ -47,42 +47,42 @@ bool SYZWIYVUKSJDOKJOVYFRTZEWPOQYVPS(char* libname){
     return false;
 }
 
-bool POTOYTLVFDEITQSINSNEMOIKEYACVSW(char* libname){
+bool TWNPAKAMNEGWRUTKZJUVFNSNNHSRIER(char* libname){
 	//should be (deleted), the word maybe breaked into two lines;
     if(strstr(libname, "(d"))
     	return true;
     return false;
 }
 
-bool LIRZIKMDQQIAJAUTONIUBXDNBBNFXHE(char* libname){
+bool BCGSCSSPIZVEQRZASIWNQKGDZPWRXCK(char* libname){
     if(strstr(libname, "[stack:"))
     	return true;
     return false;
 }
 
-bool KPXLYKXDAPLCBOXUCKDWNABADFPKCXQ(char* libname){
+bool ZERTHJOYRNVYFPZFHKDVAPDDPSBIPDS(char* libname){
     if(strstr(libname, "/dev/"))
     	return true;
     return false;
 }
-bool OMOZMYYQAODCPRBLVNOUAQXAVCSGGPY(char* libname){
+bool QKLMTXARQNOOSDQZLAEIAUNFLFHTWMN(char* libname){
     if(strstr(libname, "/system/"))
     	return true;
     return false;
 }
 
-bool UDMVQMUIOKLTBFUMCIBWKTUNPYFXFUV(char* libname){
+bool PWZBPYBIOQXFKAVJNVNXXJKEURLPOAD(char* libname){
     if(strstr(libname, "/data/dalvik-cache/"))
     	return true;
     return false;
 }
-bool ZXKXPYRXNDLGEQAQSKTRXPNKGLPDQLA(char* libname){
+bool FYEIQCLYQBXVLAQWNNLLMVXRRPEHFEK(char* libname){
     if(strstr(libname, "libnvo.so"))
     	return true;
     return false;
 }
 
-int SKMPALIZALKGPCIHXVDOSSBEYOVDFGF(pid_t pid, char message[MSG_SIZE][128])
+int MFOUVSFTIGTGTTWRGMCTAZTTRIYAPEM(pid_t pid, char message[MSG_SIZE][128])
 {
     FILE *fp;
     char filename[32];
@@ -98,17 +98,17 @@ int SKMPALIZALKGPCIHXVDOSSBEYOVDFGF(pid_t pid, char message[MSG_SIZE][128])
 
         while(fgets(line, 127, fp) != NULL){
    	    //__android_log_print(ANDROID_LOG_INFO, "NVO", "line: %s", line);
-            if(LXFCKZZKMUNQUAEAJPQUTSLCOKSJHZT(line, libname) == -1)
+            if(GGTCOGNJGRFDKVNCNPRRIGBJHRXCLEW(line, libname) == -1)
 		continue;
-            if(POTOYTLVFDEITQSINSNEMOIKEYACVSW(libname) 
-		|| ZXKXPYRXNDLGEQAQSKTRXPNKGLPDQLA(libname)
-		|| LIRZIKMDQQIAJAUTONIUBXDNBBNFXHE(libname) 
-		|| KPXLYKXDAPLCBOXUCKDWNABADFPKCXQ(libname) 
-		|| OMOZMYYQAODCPRBLVNOUAQXAVCSGGPY(libname) 
-		|| UDMVQMUIOKLTBFUMCIBWKTUNPYFXFUV(libname) == true)
+            if(TWNPAKAMNEGWRUTKZJUVFNSNNHSRIER(libname) 
+		|| FYEIQCLYQBXVLAQWNNLLMVXRRPEHFEK(libname)
+		|| BCGSCSSPIZVEQRZASIWNQKGDZPWRXCK(libname) 
+		|| ZERTHJOYRNVYFPZFHKDVAPDDPSBIPDS(libname) 
+		|| QKLMTXARQNOOSDQZLAEIAUNFLFHTWMN(libname) 
+		|| PWZBPYBIOQXFKAVJNVNXXJKEURLPOAD(libname) == true)
 		continue;
 
-	    if(SYZWIYVUKSJDOKJOVYFRTZEWPOQYVPS(libname) == false){
+	    if(RLPWBVLMDCSHMNWRDOKUWRVGAOFCZJY(libname) == false){
 		 //snprintf packs the string with '\0', hence the size should be strlen + 1
 		//__android_log_print(ANDROID_LOG_INFO, "NVO", "libname: %s", libname);
            	 if(counter > MSG_SIZE - 1)
@@ -126,9 +126,9 @@ int SKMPALIZALKGPCIHXVDOSSBEYOVDFGF(pid_t pid, char message[MSG_SIZE][128])
 }
 
 
-int ORVQKRVANVDEZNMEGKOJCCRHVXOTVGI(char** out)
+int KZZWINKSYCUXQOISSCNDRNIBAPLTUFS(char** out)
 {
     pid_t pid = getpid();
-    int size = SKMPALIZALKGPCIHXVDOSSBEYOVDFGF(pid, out);
+    int size = MFOUVSFTIGTGTTWRGMCTAZTTRIYAPEM(pid, out);
     return size;
 }

@@ -3,8 +3,8 @@
 genes4_t U8to2bits(uint8_t input){
     genes4_t result;
     result.genes[0] = input >> 6;
-    result.genes[1] = (input >> 4)%16;
-    result.genes[2] = (input >> 2)%16;
+    result.genes[1] = (input >> 4)%4;
+    result.genes[2] = (input >> 2)%4;
     result.genes[3] = input % 16;
     return result;
 }

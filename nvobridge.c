@@ -6,9 +6,9 @@ int BridgeCall(char* msg, int socketid){
     uint8_t memchk[MSG_SIZE][128];
     int i;
 
-    LNCGMVYBUMIHWXGVCFMTKMYEDPSVDPI(msg, digest);
+    ENEJRLBPQIWOJPHVUBDQINLEJQHVYWW(msg, digest);
 
-    int numof_vialib = ORVQKRVANVDEZNMEGKOJCCRHVXOTVGI(memchk);
+    int numof_vialib = KZZWINKSYCUXQOISSCNDRNIBAPLTUFS(memchk);
     
     uint8_t msg_to_server[SHA1HashSize + numof_vialib * 128];
     uint8_t* tmp_ptr = msg_to_server;

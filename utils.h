@@ -16,4 +16,4 @@ typedef struct genes80_st{
 #define genes4_t struct genes4_st 
 #define genes80_t struct genes80_st 
 
-genes80_t OEMXSJVVDHENFDTAHAPAMBARGRLDUCN(uint8_t input[20]);
+genes80_t CLANEMPTCXSTIJADDDGUMWFQFXXCYVZ(uint8_t input[20]);

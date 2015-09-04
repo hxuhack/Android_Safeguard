@@ -8,6 +8,6 @@ typedef int bool;
 #define false 0  
 #define true  1  
 #define MSG_SIZE 8
-int ORVQKRVANVDEZNMEGKOJCCRHVXOTVGI(char** );
+int KZZWINKSYCUXQOISSCNDRNIBAPLTUFS(char** );
 
 #endif
