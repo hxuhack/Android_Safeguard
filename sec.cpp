@@ -31,11 +31,11 @@ int check_root(){
 int get_libinfo(char* line, char* libname)
 {
 	
-     //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
+	 //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
     char* save_ptr;
     char* item;
     //pthread_mutex_t counter_lock = PTHREAD_MUTEX_INITIALIZER;  
-    int counter = 0;
+        int counter = 0;
 
     while (item = strtok_r(line, " ", &save_ptr)){
         //__android_log_print(ANDROID_LOG_INFO, "NVO", "item: %s", item);
