@@ -11,3 +11,7 @@
 #nvgen ~/gadget/nvobridge.cpp -L=9 --
 
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk 
+
+rm -rf obj
+rm *.h
+rm *.cpp

@@ -7,3 +7,4 @@ cp original/utils.h utils.h
 cp original/nvobridge.cpp nvobridge.cpp
 cp original/nvobridge.h nvobridge.h
 cp original/main.cpp main.cpp
+cp original/libdeclare.h libdeclare.h
