@@ -3,11 +3,18 @@
 
 #include <stdio.h>
 #include <stdint.h> 
+#include <unistd.h>
+#include <pthread.h>
+#include <string>
+#include <fstream>
 
-typedef int bool;  
 #define false 0  
 #define true  1  
 #define MSG_SIZE 8
-int check_proc(char** );
+
+using namespace std;
+
+int check_proc(string[]);
+int check_root();
 
 #endif

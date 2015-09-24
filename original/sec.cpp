@@ -1,17 +1,41 @@
 #include "sec.h"
 #include "libdeclare.h"
 //#include<android/log.h>
-#include<pthread.h>
+//#include<pthread.h>
 
+
+int check_sufile(){
+
+    string paths[] = { "/system/app/Superuser.apk", "/sbin/su", "/system/bin/su",                
+                              "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", 
+                              "/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" };
+    for (string path : paths) {
+        fstream tmp_file;
+        tmp_file.open(path,ios::in);
+        if (!tmp_file) 
+            return 1;
+    }
+    return 0;
+}
+
+int check_suexec(){
+
+    return 0;
+}
+
+int check_root(){
+    int result = check_sufile();
+    return result;
+}
 
 int get_libinfo(char* line, char* libname)
 {
 	
-	 //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
-	char* save_ptr;
+     //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
+    char* save_ptr;
     char* item;
     //pthread_mutex_t counter_lock = PTHREAD_MUTEX_INITIALIZER;  
-        int counter = 0;
+    int counter = 0;
 
     while (item = strtok_r(line, " ", &save_ptr)){
         //__android_log_print(ANDROID_LOG_INFO, "NVO", "item: %s", item);
@@ -82,7 +106,7 @@ bool chkself(char* libname){
     return false;
 }
 
-int read_map(pid_t pid, char message[MSG_SIZE][128])
+int read_map(pid_t pid, string message[])
 {
     FILE *fp;
     char filename[32];
@@ -113,7 +137,7 @@ int read_map(pid_t pid, char message[MSG_SIZE][128])
 		//__android_log_print(ANDROID_LOG_INFO, "NVO", "libname: %s", libname);
            	 if(counter > MSG_SIZE - 1)
 	         	break;
-            	snprintf(message[counter], strlen(libname)+1, "%s", libname);
+            	message[counter]= libname;
 		//__android_log_print(ANDROID_LOG_INFO, "NVO", "message[%d]: %s", counter,message[counter]);
 		counter++;
 	    }
@@ -126,7 +150,7 @@ int read_map(pid_t pid, char message[MSG_SIZE][128])
 }
 
 
-int check_proc(char** out)
+int check_proc(string out[])
 {
     pid_t pid = getpid();
     int size = read_map(pid, out);

@@ -170,7 +170,6 @@ genes80_t fgenes = BitstoGenes(fgenes_raw);
 genes80_t kgenes = BitstoGenes(kgenes_raw);
 
     int t = 0;
-    int tmpTime = time();
     while (t < 80) {
        switch (fgenes.genes[t]){
            case 0:
@@ -283,7 +282,7 @@ void SHA1PadMessage(SHA1Context *context)
 }
 
 
-int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize])
+int SHA1(const char* testcase, uint8_t Message_Digest[SHA1HashSize])
 {
     SHA1Context sha;
     int i, err;

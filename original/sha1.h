@@ -7,6 +7,7 @@
 
 #include <stdio.h>
 #include <stdint.h> 
+#include <string.h> 
 /*
  * If you do not have the ISO standard stdint.h header file, then you
  * must typdef the following:
@@ -59,6 +60,6 @@ int SHA1Input(SHA1Context *,
 int SHA1Result(SHA1Context *,
                 uint8_t Message_Digest[SHA1HashSize]);
 
-int SHA1(char* testcase, uint8_t Message_Digest[SHA1HashSize]);
+int SHA1(const char* testcase, uint8_t Message_Digest[SHA1HashSize]);
 
 #endif
