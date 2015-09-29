@@ -10,7 +10,6 @@
 #include <string>
 #include <fstream>
 #include "sec_basis.h"
-#include "libdeclare.h"
 
 #define false 0  
 #define true  1  
@@ -20,5 +19,6 @@ using namespace std;
 
 int check_proc(string[]);
 int check_root();
+int check_emulator();
 
 #endif

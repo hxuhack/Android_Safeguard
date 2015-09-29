@@ -16,6 +16,7 @@ using namespace std;
 
 int check_sufile();
 int check_suexec();
+int check_generic();
 int read_map(pid_t, string[]);
 
 #endif

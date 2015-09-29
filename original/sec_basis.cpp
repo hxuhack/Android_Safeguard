@@ -1,11 +1,6 @@
-#include "sec.h"
-#include "libdeclare.h"
-//#include<android/log.h>
-//#include<pthread.h>
-
+#include "sec_basis.h"
 
 int check_sufile(){
-
     string paths[] = { "/system/app/Superuser.apk", "/sbin/su", "/system/bin/su",                
                               "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", 
                               "/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" };
@@ -19,14 +14,85 @@ int check_sufile(){
 }
 
 int check_suexec(){
-
     return 0;
+}
+
+/*
+[gsm.version.baseband]: [G900VVRU2BOE1]
+[gsm.version.ril-impl]: [Samsung RIL v3.0]
+[net.knoxscep.version]: [2.0.1]
+[net.knoxsso.version]: [2.1.1]
+[net.knoxvpn.version]: [2.2.0]
+[persist.service.bdroid.version]: [4.1]
+[ro.board.platform]: [msm8974]
+[ro.boot.hardware]: [qcom]
+[ro.boot.serialno]: [xxxxxx]
+[ro.build.version.all_codenames]: [REL]
+[ro.build.version.codename]: [REL]
+[ro.build.version.incremental]: [G900VVRU2BOE1]
+[ro.build.version.release]: [5.0]
+[ro.build.version.sdk]: [21]
+[ro.build.version.sdl]: [2101]
+[ro.com.google.gmsversion]: [5.0_r2]
+[ro.config.timaversion]: [3.0]
+[ro.hardware]: [qcom]
+[ro.opengles.version]: [196108]
+[ro.product.brand]: [Verizon]
+[ro.product.manufacturer]: [samsung]
+[ro.product.model]: [SM-G900V]
+*/
+string get_devprop(int index){
+
+    string cmd;
+    switch (index){
+        case 1:
+	    cmd = "getprop | grep brand";
+	    break;
+        default:    
+	    cmd = "getprop";
+            //grep model|version.sdk|manufacturer|hardware|platform|revision|serialno|product.name|brand";
+	    break;
+    }
+
+    //Exec in a new thread
+    char buf_ps[1024];
+    char ps[1024]={0};
+    string out;
+
+    FILE *ptr = popen(cmd.c_str(),"r");
+    if(ptr!=NULL)
+    {
+        while(fgets(buf_ps, 1024, ptr)!=NULL)
+        {
+            out = out + buf_ps;
+            if(out.length()>1024)
+                break;
+        }
+        pclose(ptr);
+        ptr = NULL;
+    }
+    else
+    {
+        printf("popen %s error\n", ps);
+    }
+    string rest = out.substr(out.rfind("["),out.rfind("]"));
+    return rest;
+}
+
+int check_generic(){
+
+    string dev_brand = get_devprop(1);//brand
+    if (dev_brand == "generic") {
+          return 1;//"YES, I am an emulator"
+    } else {
+          return 0;
+          //"NO, I am NOT an emulator"
+    }
 }
 
 int get_libinfo(char* line, char* libname)
 {
-	
-     //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
+    //__android_log_print(ANDROID_LOG_INFO, "NVO", "get_libinfo: line: %s", line);
     char* save_ptr;
     char* item;
     //pthread_mutex_t counter_lock = PTHREAD_MUTEX_INITIALIZER;  
@@ -56,10 +122,20 @@ int get_libinfo(char* line, char* libname)
 }
 
 bool chkdict(char* libname){
-    int i;
-    for(i = 0; i < dictlength; i++){
 
-	if(strcmp(libdict[i].libname,libname) == 0) {
+    string libnames[] = {"/system/framework/arm/boot.oat", 
+	"/data/dalvik-cache/arm/system@framework@boot.art",
+	"anon_inode:dmabuf",
+	"/data/dalvik-cache/arm/data@app@com.trap-2@base.apk@classes.dex",
+	"/data/app/com.trap-1/base.apk",
+	"/data/app/com.trap-2/base.apk",
+	"[sigpage]",
+	"[vectors]",
+	"[stack]"};
+
+    for (string item : libnames) {
+
+	if(item == libname) {
 	    return true;
         }
     }

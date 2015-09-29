@@ -10,7 +10,7 @@
 #include <assert.h>
 #include <sys/ptrace.h>
 #include <resolv.h>
-#include "sec.h"
+#include "sec_utils.h"
 #include "sha1.h"
 #include "nvobridge.h"
 
