@@ -23,11 +23,6 @@ int check_suexec(){
     return 0;
 }
 
-int check_root(){
-    int result = check_sufile();
-    return result;
-}
-
 int get_libinfo(char* line, char* libname)
 {
 	
@@ -147,12 +142,4 @@ int read_map(pid_t pid, string message[])
     }
 	//__android_log_print(ANDROID_LOG_INFO, "NVO", "EXIT read_map");
     return counter;
-}
-
-
-int check_proc(string out[])
-{
-    pid_t pid = getpid();
-    int size = read_map(pid, out);
-    return size;
 }

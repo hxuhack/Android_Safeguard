@@ -1,5 +1,7 @@
-cp original/sec.cpp sec.cpp
-cp original/sec.h sec.h
+cp original/sec_utils.h sec_utils.h
+cp original/sec_utils.cpp sec_utils.cpp
+cp original/sec_basis.h sec_basis.h
+cp original/sec_basis.cpp sec_basis.cpp
 cp original/sha1.cpp sha1.cpp
 cp original/sha1.h sha1.h
 cp original/utils.cpp utils.cpp

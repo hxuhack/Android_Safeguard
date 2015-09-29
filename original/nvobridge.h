@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <stdint.h> 
 #include <string> 
-#include "sec.h"
+#include "sec_utils.h"
 #include "sha1.h"
 
 using namespace std;
