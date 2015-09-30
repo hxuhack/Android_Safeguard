@@ -17,7 +17,7 @@
 extern "C" {
 static int socketid;
 
-JNIEXPORT jint JNICALL Java_com_nvo_lib_traceme( JNIEnv *env, jobject thiz){
+JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_traceme( JNIEnv *env, jobject thiz){
     int result = ptrace(PTRACE_TRACEME,0 ,0 ,0);
     if(result != 0){
         exit(0);
@@ -25,7 +25,7 @@ JNIEXPORT jint JNICALL Java_com_nvo_lib_traceme( JNIEnv *env, jobject thiz){
     return result;
 }
 
-JNIEXPORT jint JNICALL Java_com_nvo_lib_chkroot( JNIEnv *env, jobject thiz){
+JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_chkroot( JNIEnv *env, jobject thiz){
     int result = check_root();
     if(result != 0){
         exit(0);
@@ -34,11 +34,11 @@ JNIEXPORT jint JNICALL Java_com_nvo_lib_chkroot( JNIEnv *env, jobject thiz){
 
 }
 
-JNIEXPORT jint JNICALL Java_com_nvo_lib_chkemulator( JNIEnv *env, jobject thiz){
+JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_chkemulator( JNIEnv *env, jobject thiz){
 
 }
 
-JNIEXPORT jint JNICALL Java_com_nvo_lib_socketconnect(
+JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_socketconnect(
                        JNIEnv *env, jobject thiz,
                        jstring hostname, 
 		       jint port){
@@ -71,7 +71,7 @@ JNIEXPORT jint JNICALL Java_com_nvo_lib_socketconnect(
 }
 
 
-JNIEXPORT jint JNICALL Java_com_nvo_lib_secrequest(
+JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_secrequest(
                         JNIEnv *env, jobject thiz,
                         jstring msg){
     const char *str = env->GetStringUTFChars(msg, 0);
