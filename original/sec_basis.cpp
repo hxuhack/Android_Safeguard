@@ -6,6 +6,7 @@ int check_sufile(){
                               //"/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", 
                               //"/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" };
     string paths[] = {"/sbin/su", "/system/bin/su","/system/xbin/su", "/data/local/xbin/su"};
+
     for (string path : paths) {
         fstream tmp_file;
         tmp_file.open(path,ios::in);
@@ -19,6 +20,29 @@ int check_sufile(){
 }
 
 int check_suexec(){
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_suexec");
+    string cmd = "su";
+    char buf_ps[1024];
+    char ps[1024]={0};
+    string out;
+
+    FILE *ptr = popen(cmd.c_str(),"r");
+    if(ptr!=NULL)
+    {
+        while(fgets(buf_ps, 1024, ptr)!=NULL)
+        {
+            out = out + buf_ps;
+            if(out.length()>1024)
+                break;
+        }
+        pclose(ptr);
+        ptr = NULL;
+    }
+    else
+    {
+        printf("popen %s error\n", ps);
+    }
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "out:%s",out.c_str());
     return 0;
 }
 
@@ -48,6 +72,7 @@ int check_suexec(){
 */
 string get_devprop(int index){
 
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: get_devprop");
     string cmd;
     switch (index){
         case 1:
@@ -80,13 +105,16 @@ string get_devprop(int index){
     {
         printf("popen %s error\n", ps);
     }
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "our: %s", out.c_str());
     string rest = out.substr(out.rfind("["),out.rfind("]"));
     return rest;
 }
 
 int check_generic(){
-
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_generic");
     string dev_brand = get_devprop(1);//brand
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "dev_brand: %s", dev_brand.c_str());
+
     if (dev_brand == "generic") {
           return 1;//"YES, I am an emulator"
     } else {
