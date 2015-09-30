@@ -1,15 +1,20 @@
 #include "sec_basis.h"
 
 int check_sufile(){
-    string paths[] = { "/system/app/Superuser.apk", "/sbin/su", "/system/bin/su",                
-                              "/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", 
-                              "/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" };
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_sufile");
+   // string paths[] = { "/system/app/Superuser.apk", "/sbin/su", "/system/bin/su",                
+                              //"/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", 
+                              //"/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" };
+    string paths[] = {"/sbin/su", "/system/bin/su","/system/xbin/su", "/data/local/xbin/su"};
     for (string path : paths) {
         fstream tmp_file;
         tmp_file.open(path,ios::in);
-        if (!tmp_file) 
+        if (tmp_file) 
+            __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: true");
             return 1;
     }
+
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: flase");
     return 0;
 }
 

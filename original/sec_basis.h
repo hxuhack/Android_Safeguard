@@ -7,6 +7,7 @@
 #include <pthread.h>
 #include <string>
 #include <fstream>
+#include "android/log.h"
 
 #define false 0  
 #define true  1  
