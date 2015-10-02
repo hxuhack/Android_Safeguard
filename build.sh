@@ -1,4 +1,5 @@
 #bin/sh
+
 ./restore.sh
 
 #rm *.txt
@@ -10,7 +11,8 @@
 #nvgen ~/gadget/utils.cpp -L=2 --
 #nvgen ~/gadget/nvobridge.cpp -L=9 --
 
-ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android.mk NDK_APPLICATION_MK=./Application.mk 
+ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android_exec.mk NDK_APPLICATION_MK=./Application.mk 
+ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android_so.mk NDK_APPLICATION_MK=./Application.mk 
 
 rm -rf obj
 rm *.h
