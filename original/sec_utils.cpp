@@ -1,8 +1,12 @@
 #include "sec_utils.h"
 
 int check_root(){
-    int result = check_sufile();
-    return result;
+    if(check_sufile()||check_suexec()){
+        __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_root: positive");
+        return 1;
+    }
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_emulator: negtive");
+    return 0;
 }
 
 int check_proc(string out[])
@@ -17,6 +21,9 @@ Return 1 if emulator
 */
 int check_emulator(){
     if (check_generic()){
+        __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_emulator: positive");
         return 1;
     } 
+    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_emulator: negtive");
+    return 0;
 }
