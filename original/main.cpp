@@ -27,15 +27,12 @@ JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_traceme( JNIEnv *env, jobject thiz){
 
 JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_chkroot( JNIEnv *env, jobject thiz){
     int result = check_root();
-    if(result != 0){
-        exit(0);
-    }
     return result;
-
 }
 
 JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_chkemulator( JNIEnv *env, jobject thiz){
-
+    int result = check_emulator();
+    return result;
 }
 
 JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_socketconnect(
