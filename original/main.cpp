@@ -79,4 +79,29 @@ JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_secrequest(
     return 0;
 }
 
+int main(int argc, char *argv[]){
+    int opt;
+    while((opt=getopt(argc,argv,"reti"))!=-1){
+        switch(opt){
+	    case 'r':
+	        //check root
+                check_root();
+	        break;
+            case 'e':
+                //detect emulator
+                check_emulator();
+	        break;
+            case 't':
+                //traceme
+	        break;
+
+            case 'i':
+                //check integrity
+	        break;
+            default:
+                break;
+        }
+    }
+}
+//end of extern 'c'
 }
