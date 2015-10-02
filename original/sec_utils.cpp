@@ -1,7 +1,8 @@
 #include "sec_utils.h"
 
 int check_root(){
-    if(check_sufile()||check_suexec()){
+    //if(check_sufile()||check_suexec()){
+    if(check_sufile()){
         __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_root: positive");
         return 1;
     }
@@ -9,12 +10,6 @@ int check_root(){
     return 0;
 }
 
-int check_proc(string out[])
-{
-    pid_t pid = getpid();
-    int size = read_map(pid, out);
-    return size;
-}
 /*
 Return 0 if real device
 Return 1 if emulator
@@ -26,4 +21,11 @@ int check_emulator(){
     } 
     __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_emulator: negtive");
     return 0;
+}
+
+int check_proc(string out[])
+{
+    pid_t pid = getpid();
+    int size = read_map(pid, out);
+    return size;
 }
