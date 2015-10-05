@@ -5,14 +5,13 @@
 #include <stdlib.h>
 #include <netdb.h>
 #include <unistd.h>
-#include <jni.h>
-#include <android/log.h>
+#include "/opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/jni.h"
+#include "/opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/android/log.h"
 #include <assert.h>
 #include <sys/ptrace.h>
 #include <resolv.h>
 #include "sec_utils.h"
 #include "sha1.h"
-#include "nvobridge.h"
 
 extern "C" {
 static int socketid;
@@ -71,8 +70,26 @@ JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_socketconnect(
 JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_secrequest(
                         JNIEnv *env, jobject thiz,
                         jstring msg){
-    const char *str = env->GetStringUTFChars(msg, 0);
-    BridgeCall(str,strlen(str));
+
+    const char *msg = env->GetStringUTFChars(msg, 0);
+
+    uint8_t digest[SHA1HashSize];
+    string memchk[MSG_SIZE];
+    string msg_to_server;
+    int i;
+
+    SHA1(msg, digest);
+
+    int numof_vialib = check_proc(memchk);
+    
+    msg_to_server = (char *) digest;
+    for (i=0; i<numof_vialib; i++ ){
+        msg_to_server = msg_to_server + memchk[i];
+    }
+
+    //__android_log_print(ANDROID_LOG_INFO, "NVO", "msg_to_server: %s", msg_to_server);
+    send(socketid, msg_to_server.c_str(), msg_to_server.length(), 0);
+
     return 0;
 }
 
