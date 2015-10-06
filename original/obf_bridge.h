@@ -9,7 +9,6 @@
 #include <sys/ptrace.h>
 #include <resolv.h>
 #include "/opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/android/log.h"
-#include "sha1.h"
 #include "sec_utils.h"
 
 int jni_traceme();

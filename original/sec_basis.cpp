@@ -1,7 +1,7 @@
 #include "sec_basis.h"
 
 int check_sufile(){
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_sufile");
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_sufile");
    // string paths[] = { "/system/app/Superuser.apk", "/sbin/su", "/system/bin/su",                
                               //"/system/xbin/su", "/data/local/xbin/su", "/data/local/bin/su", 
                               //"/system/sd/xbin/su", "/system/bin/failsafe/su", "/data/local/su" };
@@ -11,16 +11,16 @@ int check_sufile(){
         fstream tmp_file;
         tmp_file.open(path,ios::in);
         if (tmp_file) 
-            __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: true");
+            //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: true");
             return 1;
     }
 
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: flase");
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: flase");
     return 0;
 }
 
 int check_suexec(){
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_suexec");
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_suexec");
     string cmd = "su";
     char buf_ps[1024];
     char ps[1024]={0};
@@ -42,7 +42,7 @@ int check_suexec(){
     {
         printf("popen %s error\n", ps);
     }
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "out:%s",out.c_str());
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "out:%s",out.c_str());
     return 0;
 }
 
@@ -72,7 +72,7 @@ int check_suexec(){
 */
 string get_devprop(int index){
 
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: get_devprop");
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: get_devprop");
     string cmd;
     switch (index){
         case 1:
@@ -105,15 +105,15 @@ string get_devprop(int index){
     {
         printf("popen %s error\n", ps);
     }
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "our: %s", out.c_str());
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "our: %s", out.c_str());
     string rest = out.substr(out.rfind("["),out.rfind("]"));
     return rest;
 }
 
 int check_generic(){
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_generic");
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "entring function: check_generic");
     string dev_brand = get_devprop(1);//brand
-    __android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "dev_brand: %s", dev_brand.c_str());
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "dev_brand: %s", dev_brand.c_str());
 
     if (dev_brand == "generic") {
           return 1;//"YES, I am an emulator"

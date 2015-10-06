@@ -18,12 +18,12 @@ cp original/main.cpp main.cpp
 
 if [ -n "$1" ];
 then
-    nvgen ~/gadget/sha1.cpp -L=9 --
-    nvgen ~/gadget/sha1.cpp -L=1 --
-    nvgen ~/gadget/sec_basis.cpp -L=1 --
-    nvgen ~/gadget/sec_utils.cpp -L=1 --
-    nvgen ~/gadget/utils.cpp -L=1 --
-    nvgen ~/gadget/obf_bridge.cpp -L=0 --
+    obot ~/gadget/sha1.cpp -O=9 --
+    obot ~/gadget/sha1.cpp -O=1 --
+    obot ~/gadget/sec_basis.cpp -O=1 --
+    obot ~/gadget/sec_utils.cpp -O=1 --
+    obot ~/gadget/utils.cpp -O=1 --
+    obot ~/gadget/obf_bridge.cpp -O=0 --
 fi
 
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android_exec.mk NDK_APPLICATION_MK=./Application.mk 

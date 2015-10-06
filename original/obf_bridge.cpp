@@ -1,4 +1,5 @@
 #include "obf_bridge.h"
+#include "sha1.h"
 
 int jni_traceme(){
     int result = ptrace(PTRACE_TRACEME,0 ,0 ,0);
@@ -9,7 +10,7 @@ int jni_traceme(){
 }
 
 int jni_check_root(){
-    return jni_check_root();
+    return check_root();
 }
 
 int jni_check_emulator(){
@@ -22,7 +23,7 @@ int jni_socket_connect(const char* hostname, int port){
     struct hostent *nlp_host;
 
     if ((nlp_host=gethostbyname(hostname))==NULL){
-	__android_log_print(ANDROID_LOG_INFO, "NVO", "Resolve Error:%s", hostname);
+	//__android_log_print(ANDROID_LOG_INFO, "NVO", "Resolve Error:%s", hostname);
 	return -1;
     }
  
@@ -35,7 +36,7 @@ int jni_socket_connect(const char* hostname, int port){
     int socketid=socket(AF_INET,SOCK_STREAM,0);
  
     if (connect(socketid,(struct sockaddr*)&pin,sizeof(pin))==-1){
-        __android_log_print(ANDROID_LOG_INFO, "NVO", "Connect Error!");
+        //__android_log_print(ANDROID_LOG_INFO, "NVO", "Connect Error!");
 	return -1;
     }
     return socketid;
