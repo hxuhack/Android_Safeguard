@@ -9,7 +9,7 @@ int check_sufile(){
 
     for (string path : paths) {
         fstream tmp_file;
-        tmp_file.open(path,ios::in);
+        tmp_file.open(path.c_str(),ios::in);
         if (tmp_file) 
             //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "check_sufile: true");
             return 1;

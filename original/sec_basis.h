@@ -6,6 +6,7 @@
 #include <unistd.h>
 #include <pthread.h>
 #include <string>
+#include <string.h>
 #include <fstream>
 #include "/opt/android-ndk-r10e/platforms/android-21/arch-arm/usr/include/android/log.h"
 
