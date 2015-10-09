@@ -19,10 +19,7 @@ cp original/main.cpp main.cpp
 if [ -n "$1" ];
 then
     obot ~/gadget/sha1.cpp -O=9 --
-    obot ~/gadget/sha1.cpp -O=1 --
-    obot ~/gadget/sec_basis.cpp -O=1 --
-    obot ~/gadget/sec_utils.cpp -O=1 --
-    obot ~/gadget/utils.cpp -O=1 --
+    obot ~/gadget/sha1.cpp ~/gadget/sec_basis.cpp ~/gadget/sec_utils.cpp ~/gadget/utils.cpp -O=1 --
     obot ~/gadget/obf_bridge.cpp -O=0 --
 fi
 
