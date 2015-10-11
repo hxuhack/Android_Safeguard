@@ -1,19 +1,23 @@
-#include <stdio.h>
+#ifndef _UTILS_H_
+#define _UTILS_H_
 
-#ifndef __uint8_t_defined
+#include <stdio.h>
+#ifndef __uint8_t_
 typedef unsigned char uint8_t;
-#define __uint8_t_defined
+#define __uint8_t_
 #endif
 
-typedef struct genes4_st{
+struct genes4_st{
     uint8_t genes[4];
 };
 
-typedef struct genes80_st{
+struct genes80_st{
     uint8_t genes[80];
 };
 
 #define genes4_t struct genes4_st 
 #define genes80_t struct genes80_st 
 
-genes80_t BitstoGenes(uint8_t input[20]);
+genes80_t BitstoGenes(uint8_t[20]);
+
+#endif

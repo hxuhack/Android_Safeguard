@@ -18,9 +18,8 @@ cp original/main.cpp main.cpp
 
 if [ -n "$1" ];
 then
-    obot ~/gadget/sha1.cpp -O=9 --
-    obot ~/gadget/sha1.cpp ~/gadget/sec_basis.cpp ~/gadget/sec_utils.cpp ~/gadget/utils.cpp -O=1 --
-    obot ~/gadget/obf_bridge.cpp -O=0 --
+#    obot ~/gadget/sha1.cpp -O=9 --
+    obot ~/gadget/sha1.cpp ~/gadget/sec_basis.cpp ~/gadget/sec_utils.cpp ~/gadget/utils.cpp ~/gadget/obf_bridge.cpp -O=1 --
 fi
 
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android_exec.mk NDK_APPLICATION_MK=./Application.mk 
