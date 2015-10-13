@@ -2,7 +2,7 @@
 
 ./restore.sh
 
-#rm *.txt
+rm *.txt
 
 cp original/sec_utils.h sec_utils.h
 cp original/sec_utils.cpp sec_utils.cpp
@@ -18,7 +18,7 @@ cp original/main.cpp main.cpp
 
 if [ -n "$1" ];
 then
-#    obot ~/gadget/sha1.cpp -O=9 --
+    obot ~/gadget/sha1.cpp -O=9 --
     obot ~/gadget/sha1.cpp ~/gadget/sec_basis.cpp ~/gadget/sec_utils.cpp ~/gadget/utils.cpp ~/gadget/obf_bridge.cpp -O=1 --
 fi
 
