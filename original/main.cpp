@@ -12,7 +12,7 @@ JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_chkroot( JNIEnv *env, jobject thiz){
 }
 
 JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_chkemulator( JNIEnv *env, jobject thiz){
-    return check_emulator();
+    return jni_check_emulator();
 }
 
 JNIEXPORT jint JNICALL Java_edu_nvo_lib_jni_socketconnect(

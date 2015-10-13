@@ -166,12 +166,12 @@ void NVO_MODULE(){
     //TO BE REWRITEN
 uint8_t fgenes_raw[20] = {74,185,136,244,126,90,189,14,248,242,208,118,16,30,184,140,165,111,155,21};
 uint8_t kgenes_raw[20] = {147,126,20,1,119,191,165,58,78,91,44,152,20,181,140,147,15,74,161,7};
-genes80_t fgenes = BitstoGenes(fgenes_raw);
-genes80_t kgenes = BitstoGenes(kgenes_raw);
+uint8_t* fgenes = BitstoGenes(fgenes_raw);
+uint8_t* kgenes = BitstoGenes(kgenes_raw);
 
     int t = 0;
     while (t < 80) {
-       switch (fgenes.genes[t]){
+       switch (fgenes[t]){
            case 0:
                nv_lo0();
                break;
@@ -187,7 +187,7 @@ genes80_t kgenes = BitstoGenes(kgenes_raw);
            default:
                break;
        }
-       switch (kgenes.genes[t]){
+       switch (kgenes[t]){
            case 0:
                K = 0x5A827999;
                break;
