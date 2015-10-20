@@ -16,8 +16,8 @@ cp original/obf_bridge.cpp obf_bridge.cpp
 cp original/obf_bridge.h obf_bridge.h
 cp original/main.cpp main.cpp
 
-#obot ~/gadget/sec_utils.cpp -O=0 --
-obot ~/gadget/sha1.cpp ~/gadget/sec_basis.cpp ~/gadget/sec_utils.cpp ~/gadget/utils.cpp ~/gadget/obf_bridge.cpp -O=0 --
+obot ~/gadget/sec_basis.cpp -O=0 --
+#obot ~/gadget/sha1.cpp ~/gadget/sec_basis.cpp ~/gadget/sec_utils.cpp ~/gadget/utils.cpp ~/gadget/obf_bridge.cpp -O=0 --
 
 ndk-build NDK_PROJECT_PATH=. APP_BUILD_SCRIPT=./Android_exec.mk NDK_APPLICATION_MK=./Application.mk 
 
