@@ -1,1 +1,24 @@
-This is the N-Version obfuscation(NVO) project
+This is the safeguard within the NVO project.
+
+==Features==
+The safeguard can serve as an SDK for apps. It includes the following features:
+
+===Root Detection===
+Function: Java_edu_nvo_lib_jni_chkroot( JNIEnv *, jobject);
+
+===Anti-Ptrace===
+Function: Java_edu_nvo_lib_jni_traceme( JNIEnv *, jobject);
+
+===Emulator Detection===
+Function: Java_edu_nvo_lib_jni_chkemulator( JNIEnv *, jobject);
+
+===Socket Connection===
+Function:  Java_edu_nvo_lib_jni_socketconnect(JNIEnv *, jobject, jstring, jint);
+
+===NVO-SHA1 Socket Connection===
+Java_edu_nvo_lib_jni_secrequest(JNIEnv *, jobject, jstring, jint);
+
+==Launch the Project==
+The project can be compiled with OBOT obfuscation tool: ./build.sh 1
+
+,or standard c++ compiler: ./build.sh
