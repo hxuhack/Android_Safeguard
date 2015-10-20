@@ -24,15 +24,15 @@ int check_suexec(){
     string cmd = "su";
     char buf_ps[1024];
     char ps[1024]={0};
-    string out;
+    string output;
 
     FILE *ptr = popen(cmd.c_str(),"r");
     if(ptr!=NULL)
     {
         while(fgets(buf_ps, 1024, ptr)!=NULL)
         {
-            out = out + buf_ps;
-            if(out.length()>1024)
+            output = output + buf_ps;
+            if(output.length()>1024)
                 break;
         }
         pclose(ptr);
@@ -87,15 +87,15 @@ string get_devprop(int index){
     //Exec in a new thread
     char buf_ps[1024];
     char ps[1024]={0};
-    string out;
+    string output;
 
     FILE *ptr = popen(cmd.c_str(),"r");
     if(ptr!=NULL)
     {
         while(fgets(buf_ps, 1024, ptr)!=NULL)
         {
-            out = out + buf_ps;
-            if(out.length()>1024)
+            output = output + buf_ps;
+            if(output.length()>1024)
                 break;
         }
         pclose(ptr);
@@ -105,8 +105,8 @@ string get_devprop(int index){
     {
         printf("popen %s error\n", ps);
     }
-    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "our: %s", out.c_str());
-    string rest = out.substr(out.rfind("["),out.rfind("]"));
+    //__android_log_print(ANDROID_LOG_INFO, "NVO_DEBUG", "our: %s", output.c_str());
+    string rest = output.substr(output.rfind("["),output.rfind("]"));
     return rest;
 }
 

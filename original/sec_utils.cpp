@@ -23,9 +23,9 @@ int check_emulator(){
     return 0;
 }
 
-int check_proc(string out[])
+int check_proc(string output[])
 {
     pid_t pid = getpid();
-    int size = read_map(pid, out);
+    int size = read_map(pid, output);
     return size;
 }
