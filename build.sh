@@ -16,6 +16,7 @@ cp original/obf_bridge.cpp obf_bridge.cpp
 cp original/obf_bridge.h obf_bridge.h
 cp original/main.cpp main.cpp
 
+#RESEAVED FOR SRC TO SRC TRANSFORMATION BASED ON OBAST
 if [ -n "$1" ];
 then
     obot ~/gadget/sha1.cpp -O=9 --
